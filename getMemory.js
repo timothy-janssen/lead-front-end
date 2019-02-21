@@ -1,5 +1,3 @@
-var csrf    = require('./get-csrf-token.js');
-
 Window.webchatMethods = {
 	getMemory: function () {
 

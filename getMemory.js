@@ -28,5 +28,5 @@ document.onload = function () {
 								},
 								"merge": true
 							};
-						}
+						})
 }

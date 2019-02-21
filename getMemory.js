@@ -13,12 +13,12 @@ Window.webchatMethods = {
 				},
 				"merge": true
 			};
-		}
+		})
 	}
 }
 
-exports.onloadGetToken = function () {
-	
+document.onload = function () {
+
 	Window.csrf_token = csrf.getToken()
 						.then( function(token_data){
 							return {

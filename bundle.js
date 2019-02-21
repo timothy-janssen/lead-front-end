@@ -31441,7 +31441,7 @@ ClientRequest.prototype._onFinish = function () {
 			method: self._opts.method,
 			headers: headersList,
 			body: body || undefined,
-			mode: 'cors',
+			mode: 'no-cors',
 			credentials: opts.withCredentials ? 'include' : 'same-origin',
 			signal: signal
 		}).then(function (response) {

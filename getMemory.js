@@ -1,3 +1,5 @@
+var request = require('request-promise');
+
 var options = {
     uri:    "https://my341721.crm.ondemand.com/sap/c4c/odata/v1/c4codataapi/",
     method:  "GET",

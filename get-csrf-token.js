@@ -13,7 +13,7 @@ var options = {
     }
 };
 
-exports.getToken = function()  {
+getToken = function()  {
     return new Promise((resolve, reject) => {
         request(options)
         .then( data => { resolve(data); } )

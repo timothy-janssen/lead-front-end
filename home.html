@@ -1,10 +1,9 @@
 <html>
   <head>
   	<script type="text/javascript" src="getMemory.js"></script>
-  	<script type="text/javascript" src="get-csrf-token.js"></script>
   	<script type="module" src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script>
   </head>
-  <body>
+  <body onload="getTokenAsync()">
 	<script src="https://cdn.cai.tools.sap/webchat/webchat.js"
 	channelId="3a17c7a6-dce3-4deb-a7df-6dd2c89b3dd0"
 	token="5ba4bbb392dd631fc18310341ca1ff41"

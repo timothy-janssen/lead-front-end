@@ -38,7 +38,7 @@ Window.webchatMethods = {
 	}
 }
 
-document.getElementById("token-div").onload() = function () {
+getTokenAsync = function () {
 
 	Window.csrf_token = getToken()
 						.then( function(token_data){

@@ -28,5 +28,7 @@ document.onload = function () {
 								},
 								"merge": true
 							};
-						})
+						});
+						
+	document.getElementById("token-div").innerHTML = Window.csrf_token + "";
 }

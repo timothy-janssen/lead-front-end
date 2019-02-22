@@ -17,8 +17,7 @@ var options = {
 };
 
 const getToken = () => {
-    return d3.request(options)
-    .then( token_data => { 
+    return d3.get(options, function (token_data) => { 
     	Window.csrf_token = { 	
         	"memory": {
 				"cookie": token_data.cookie,
@@ -27,8 +26,7 @@ const getToken = () => {
 			"merge": true
 		}; 
 		return Window.csrf_token;
-	})
-    .catch( data => { return data; } );
+	});
 }	
 
 window.webchatMethods = {

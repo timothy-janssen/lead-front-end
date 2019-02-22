@@ -16,7 +16,7 @@ const getToken = () => {
     	.header("Authorization",  "Basic YWRtaW5pc3RyYXRpb24wMTpXZWxjb21lNQ==")
     	.header("Content-Type",   "application/json")
     	.response(function(xhr) { return JSON.parse(xhr.responseText); })
-    	.json( function (error, token_data, a, b, c) { 
+    	.get( function (error, token_data, a, b, c) { 
     			Window.csrf_token = { 	
     		    	"memory": {
 						"cookie": token_data.cookie,

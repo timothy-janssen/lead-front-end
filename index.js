@@ -24,7 +24,7 @@ getToken = function()  {
 }	
 
 Window.webchatMethods = {
-	getMemory: function () {
+	getMemory: (conversationId) => {
 
 
 		return Window.csrf_token || getToken()

@@ -40,7 +40,7 @@ window.webchatMethods = {
 
 function getTokenAsync () {
 
-	getToken().then({
+	getToken().then( () => {
 		document.getElementById("token-div").innerHTML = Window.csrf_token + "";
 	});
 

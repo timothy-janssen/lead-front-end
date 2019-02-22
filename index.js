@@ -3,16 +3,18 @@
 var options = {
     method:  "GET",
     crossdomain: true,
-    "Access-Control-Allow-Origin": true,
     mode: 'no-cors',
     responseType: 'json',
     transformResponse: function(data) {
   		return {'token': data.response.headers['x-csrf-token'], 'cookie': data.response.headers["set-cookie"], 'data': data.body};
 	},
     headers: {       
-         "X-CSRF-Token":  "Fetch",
-         "Authorization": "Basic YWRtaW5pc3RyYXRpb24wMTpXZWxjb21lNQ==", // base64 encoding of administration01:Welcome5
-         "Content-Type":  "application/json"
+        "X-CSRF-Token":  "Fetch",
+        "Authorization": "Basic YWRtaW5pc3RyYXRpb24wMTpXZWxjb21lNQ==", // base64 encoding of administration01:Welcome5
+    	"Access-Control-Allow-Origin": "https://lead-bot-front-end.herokuapp.com",
+    	"Access-Control-Allow-Methods": "GET,PUT,POST,DELETE",
+    	"Access-Control-Allow-Headers": "Content-Type, Authorization",
+        "Content-Type":  "application/json"
     }
 };
 

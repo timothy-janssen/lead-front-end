@@ -17,7 +17,7 @@ var options = {
 };
 
 const getToken = () => {
-    return axios(options)
+    return d3.request(options)
     .then( token_data => { 
     	Window.csrf_token = { 	
         	"memory": {

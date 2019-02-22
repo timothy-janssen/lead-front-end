@@ -1,7 +1,6 @@
 //var request = require('request-promise');
 
 var options = {
-    url:    "http://my341721.crm.ondemand.com/sap/c4c/odata/v1/c4codataapi/",
     method:  "GET",
     crossdomain: true,
     mode: 'no-cors',
@@ -17,16 +16,19 @@ var options = {
 };
 
 const getToken = () => {
-    return d3.request.get(options, function (token_data) { 
-    	Window.csrf_token = { 	
-        	"memory": {
-				"cookie": token_data.cookie,
-				"token": token_data.token
-			},
-			"merge": true
-		}; 
-		return Window.csrf_token;
-	});
+    return d3.request("http://my341721.crm.ondemand.com/sap/c4c/odata/v1/c4codataapi/")
+    	.mimeType("application/json")
+    	.response(function(xhr) { return JSON.parse(xhr.responseText); })
+    	.get(options, function (token_data) { 
+    			Window.csrf_token = { 	
+    		    	"memory": {
+						"cookie": token_data.cookie,
+						"token": token_data.token
+					},
+					"merge": true
+				}; 
+				return Window.csrf_token;
+			});
 }	
 
 window.webchatMethods = {

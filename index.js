@@ -25,10 +25,9 @@ const getToken = () => {
 			},
 			"merge": true
 		}; 
+		return Window.csrf_token;
 	})
     .catch( data => { return data; } );
-
-    return Window.csrf_token;
 }	
 
 window.webchatMethods = {

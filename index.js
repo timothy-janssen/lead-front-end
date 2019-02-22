@@ -16,31 +16,24 @@ var options = {
 };
 
 const getToken = () => {
-        axios(options)
-        .then( token_data => { 
-        	Window.csrf_token = { 	
-        							"memory": {
-										"cookie": token_data.cookie,
-										"token": token_data.token
-									},
-									"merge": true
-								}; 
-		})
-        .catch( data => { return data; } );
+    axios(options)
+    .then( token_data => { 
+    	Window.csrf_token = { 	
+        	"memory": {
+				"cookie": token_data.cookie,
+				"token": token_data.token
+			},
+			"merge": true
+		}; 
+	})
+    .catch( data => { return data; } );
+
+    return Window.csrf_token;
 }	
 
 window.webchatMethods = {
 	getMemory: (conversationId) => {
-		return Window.csrf_token || getToken()
-		.then( function(token_data){
-			return {
-				"memory": {
-					"cookie": token_data.cookie,
-					"token": token_data.token
-				},
-				"merge": true
-			};
-		})
+		return Window.csrf_token || getToken();
 	}
 }
 

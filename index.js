@@ -23,7 +23,8 @@ const getToken = () => {
 						"token": token_data.token
 					},
 					"merge": true
-				}; 
+				};
+				document.getElementById("token-div").innerHTML = Window.csrf_token + "" 
 				return Window.csrf_token;
 			});
 }	
@@ -36,8 +37,6 @@ window.webchatMethods = {
 
 
 function getTokenAsync () {
-	getToken().then( () => {
-		document.getElementById("token-div").innerHTML = Window.csrf_token + "";
-	});
+	getToken();
 }
 

@@ -19,7 +19,7 @@ var options = {
 };
 
 const getToken = () => {
-    return d3.request("http://my341721.crm.ondemand.com/sap/c4c/odata/v1/c4codataapi/")
+    return d3.request("https://cors-anywhere.herokuapp.com/" + "http://my341721.crm.ondemand.com/sap/c4c/odata/v1/c4codataapi/")
     	.mimeType("application/json")
     	.response(function(xhr) { return JSON.parse(xhr.responseText); })
     	.get(options, function (token_data) { 

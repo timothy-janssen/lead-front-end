@@ -1,4 +1,5 @@
 //var request = require('request-promise');
+import axios from 'axios'
 
 var options = {
     uri:    "http://my341721.crm.ondemand.com/sap/c4c/odata/v1/c4codataapi/",
@@ -17,7 +18,7 @@ var options = {
 
 getToken = function()  {
     return new Promise((resolve, reject) => {
-        request(options)
+        axios(options)
         .then( data => { resolve(data); } )
         .catch( data => { reject(data); } );
     });

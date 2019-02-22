@@ -41,7 +41,7 @@ Window.webchatMethods = {
 	}
 }
 
-getTokenAsync = function () {
+export getTokenAsync = function () {
 
 	Window.csrf_token = getToken()
 						.then( function(token_data){

@@ -15,7 +15,7 @@ var options = {
     }
 };
 
-getToken = function()  {
+const getToken = () => {
     return new Promise((resolve, reject) => {
         axios(options)
         .then( data => { resolve(data); } )
@@ -23,7 +23,7 @@ getToken = function()  {
     });
 }	
 
-Window.webchatMethods = {
+window.webchatMethods = {
 	getMemory: (conversationId) => {
 
 
@@ -41,7 +41,7 @@ Window.webchatMethods = {
 }
 
 
-getTokenAsync = function () {
+function getTokenAsync () {
 
 	Window.csrf_token = getToken()
 						.then( function(token_data){

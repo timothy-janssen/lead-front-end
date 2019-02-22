@@ -3,7 +3,7 @@
 var options = {
     method:  "GET",
     crossdomain: true,
-    Access-Control-Allow-Origin: *,
+    Access-Control-Allow-Origin: true,
     mode: 'no-cors',
     responseType: 'json',
     transformResponse: function(data) {

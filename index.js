@@ -17,7 +17,7 @@ var options = {
 };
 
 const getToken = () => {
-    return d3.get(options, function (token_data) => { 
+    return d3.get(options, function (token_data) { 
     	Window.csrf_token = { 	
         	"memory": {
 				"cookie": token_data.cookie,

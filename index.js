@@ -16,7 +16,7 @@ var options = {
 };
 
 const getToken = () => {
-    axios(options)
+    return axios(options)
     .then( token_data => { 
     	Window.csrf_token = { 	
         	"memory": {
@@ -38,11 +38,8 @@ window.webchatMethods = {
 
 
 function getTokenAsync () {
-
 	getToken().then( () => {
 		document.getElementById("token-div").innerHTML = Window.csrf_token + "";
 	});
-
-	
 }
 

@@ -3,7 +3,8 @@
 var options = {
     url:    "http://my341721.crm.ondemand.com/sap/c4c/odata/v1/c4codataapi/",
     method:  "GET",
-    responseType:    'json',
+    crossdomain: true,
+    responseType: 'json',
     transformResponse: function(data) {
   		return {'token': data.response.headers['x-csrf-token'], 'cookie': data.response.headers["set-cookie"], 'data': data.body};
 	},

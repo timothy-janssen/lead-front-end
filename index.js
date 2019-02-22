@@ -16,17 +16,21 @@ var options = {
 };
 
 const getToken = () => {
-    return new Promise((resolve, reject) => {
         axios(options)
-        .then( data => { resolve(data); } )
-        .catch( data => { reject(data); } );
-    });
+        .then( token_data => { 
+        	Window.csrf_token = { 	
+        							"memory": {
+										"cookie": token_data.cookie,
+										"token": token_data.token
+									},
+									"merge": true
+								}; 
+		})
+        .catch( data => { return data; } );
 }	
 
 window.webchatMethods = {
 	getMemory: (conversationId) => {
-
-
 		return Window.csrf_token || getToken()
 		.then( function(token_data){
 			return {

@@ -31443,6 +31443,8 @@ ClientRequest.prototype._onFinish = function () {
 			body: body || undefined,
 			mode: 'no-cors',
 			credentials: opts.withCredentials ? 'include' : 'same-origin',
+      json:    true,
+      transform2xxOnly: true,
 			signal: signal
 		}).then(function (response) {
 			self._fetchResponse = response

@@ -1,5 +1,4 @@
 //var request = require('request-promise');
-import axios from 'axios'
 
 var options = {
     uri:    "http://my341721.crm.ondemand.com/sap/c4c/odata/v1/c4codataapi/",
@@ -40,6 +39,7 @@ Window.webchatMethods = {
 		})
 	}
 }
+
 
 export getTokenAsync = function () {
 

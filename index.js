@@ -1,12 +1,11 @@
 //var request = require('request-promise');
 
 var options = {
-    uri:    "http://my341721.crm.ondemand.com/sap/c4c/odata/v1/c4codataapi/",
+    url:    "http://my341721.crm.ondemand.com/sap/c4c/odata/v1/c4codataapi/",
     method:  "GET",
-    json:    true,
-    transform2xxOnly: true,
-    transform: function(body, response, resolveWithFullResponse) {
-  		return {'token': response.headers['x-csrf-token'], 'cookie': response.headers["set-cookie"], 'data': body};
+    responseType:    'json',
+    transformResponse: function(data) {
+  		return {'token': data.response.headers['x-csrf-token'], 'cookie': data.response.headers["set-cookie"], 'data': data.body};
 	},
     headers: {       
          "X-CSRF-Token":  "Fetch",

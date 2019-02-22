@@ -31441,8 +31441,10 @@ ClientRequest.prototype._onFinish = function () {
 			method: self._opts.method,
 			headers: headersList,
 			body: body || undefined,
-			mode: 'no-cors',
+			mode: self._opts.mode || 'cors',
 			credentials: opts.withCredentials ? 'include' : 'same-origin',
+      transform2xxOnly: true,
+      json: true,
 			signal: signal
 		}).then(function (response) {
 			self._fetchResponse = response

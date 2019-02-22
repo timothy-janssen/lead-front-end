@@ -4,7 +4,6 @@ var options = {
     uri:    "https://my341721.crm.ondemand.com/sap/c4c/odata/v1/c4codataapi/",
     method:  "GET",
     json:    true,
-    mode: "no-cors",
     transform2xxOnly: true,
     transform: function(body, response, resolveWithFullResponse) {
   		return {'token': response.headers['x-csrf-token'], 'cookie': response.headers["set-cookie"], 'data': body};

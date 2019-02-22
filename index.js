@@ -1,14 +1,11 @@
 //var request = require('request-promise');
 
 var options = {
-    responseType: 'json',
     transformResponse: function(data) {
-  		return {'token': data.response.headers['x-csrf-token'], 'cookie': data.response.headers["set-cookie"], 'data': data.body};
-	},
-    headers: {       
-        
-        : , // base64 encoding of administration01:Welcome5
-        :  
+  		return { 'token': data.response.headers['x-csrf-token'], 
+  				 'cookie': data.response.headers["set-cookie"], 
+  				 'data': data.body
+  		};
     }
 };
 
@@ -28,7 +25,7 @@ const getToken = () => {
 					"merge": true
 				}; 
 				return Window.csrf_token;
-		});
+			});
 }	
 
 window.webchatMethods = {

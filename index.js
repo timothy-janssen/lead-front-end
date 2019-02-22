@@ -40,17 +40,10 @@ window.webchatMethods = {
 
 function getTokenAsync () {
 
-	Window.csrf_token = getToken()
-						.then( function(token_data){
-							return {
-								"memory": {
-									"cookie": token_data.cookie,
-									"token": token_data.token
-								},
-								"merge": true
-							};
-						});
+	getToken().then({
+		document.getElementById("token-div").innerHTML = Window.csrf_token + "";
+	});
 
-	document.getElementById("token-div").innerHTML = Window.csrf_token + "";
+	
 }
 

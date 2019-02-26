@@ -16,16 +16,17 @@ const getToken = () => {
     	.header("Authorization",  "Basic YWRtaW5pc3RyYXRpb24wMTpXZWxjb21lNQ==")
     	.header("Content-Type",   "application/json")
  //   	.response(function(xhr) { return JSON.parse(xhr.responseText); })
-    	.get( function (error, token_data, a, b, c) { 
+    	.get( function (error, token_data) { 
     		var csrf_token = token_data.getResponseHeader('x-csrf-token');
+    		var cookie = token_data.getResponseHeader('set-cookie');
     			Window.csrf_token = { 	
     		    	"memory": {
-						"cookie": token_data.cookie,
+						"cookie": cookie,
 						"token": csrf_token	
 					},
 					"merge": true
 				};
-				document.getElementById("token-div").innerHTML = Window.csrf_token.memory.token + "" 
+				document.getElementById("token-div").innerHTML = Window.csrf_token.memory.token + " "  + Window.csrf_token.memory.cookie;
 				return Window.csrf_token;
 			});
 }	

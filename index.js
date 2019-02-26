@@ -25,7 +25,7 @@ const getToken = () => {
 					},
 					"merge": true
 				};
-				document.getElementById("token-div").innerHTML = Window.csrf_token + "" 
+				document.getElementById("token-div").innerHTML = Window.csrf_token.token + "" 
 				return Window.csrf_token;
 			});
 }	

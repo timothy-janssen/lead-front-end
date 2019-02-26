@@ -17,6 +17,8 @@ const getToken = () => {
     	.header("Content-Type",   "application/json")
  //   	.response(function(xhr) { return JSON.parse(xhr.responseText); })
     	.get( function (error, token_data) { 
+
+    		console.log(token_data);
     		var csrf_token = token_data.getResponseHeader('x-csrf-token');
     		var cookie = token_data.getResponseHeader('set-cookie');
     			Window.csrf_token = { 	

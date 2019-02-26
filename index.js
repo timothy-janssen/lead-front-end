@@ -17,15 +17,15 @@ const getToken = () => {
     	.header("Content-Type",   "application/json")
  //   	.response(function(xhr) { return JSON.parse(xhr.responseText); })
     	.get( function (error, token_data, a, b, c) { 
-    		var header = token_data.getResponseHeader('x-csrf-token');
+    		var csrf_token = token_data.getResponseHeader('x-csrf-token');
     			Window.csrf_token = { 	
     		    	"memory": {
 						"cookie": token_data.cookie,
-						"token": token_data.token
+						"token": csrf_token	
 					},
 					"merge": true
 				};
-				document.getElementById("token-div").innerHTML = Window.csrf_token.token + "" 
+				document.getElementById("token-div").innerHTML = Window.csrf_token.memory.token + "" 
 				return Window.csrf_token;
 			});
 }	

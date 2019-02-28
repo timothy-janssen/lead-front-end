@@ -16,6 +16,8 @@ const getToken = () => {
     	.header("Authorization",  "Basic YWRtaW5pc3RyYXRpb24wMTpXZWxjb21lNQ==")
     	.header("Content-Type",   "application/json")
     	.header("x-access-control-allow-credentials", "true")
+    	.header("Access-Control-Allow-Origins", "http://my341721.crm.ondemand.com")
+    	.header("Access-Control-Allow-Credentialss", "true")
  //   	.response(function(xhr) { return JSON.parse(xhr.responseText); })
     	.get( function (error, token_data) { 
 

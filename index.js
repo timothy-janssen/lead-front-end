@@ -3,6 +3,7 @@
 const getToken = () => {
     return d3.request("https://radiant-sea-97792.herokuapp.com/" + "http://my341721.crm.ondemand.com/sap/c4c/odata/v1/c4codataapi/")
     	.mimeType("application/json")
+    	.mode('cors')
     	.header("X-CSRF-Token",   "Fetch")
     	.header("Authorization",  "Basic YWRtaW5pc3RyYXRpb24wMTpXZWxjb21lNQ==")
     	.header("Content-Type",   "application/json")
